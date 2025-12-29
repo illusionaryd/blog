@@ -32,7 +32,7 @@ export default defineConfig({
   build: {
     minify: 'oxc',
     cssMinify: true,
-    rollupOptions: {
+    rolldownOptions: {
       external: ['/pagefind/pagefind.js'],
     },
   },
