@@ -10,6 +10,9 @@ const props = defineProps<{
 
 const splashImage = ref<string | undefined>(undefined)
 
+// only takeover layout on clientSide, after mounted
+const takeOverLayout = ref(false)
+
 watchEffect(async () => {
   if (props.splash) {
     const result = await props.splash()
@@ -29,6 +32,9 @@ onMounted(() => {
   })
   if (!textSectionWrapper.value) return
   observer.observe(textSectionWrapper.value)
+  // initial set
+  textSectionHeight.value = textSectionWrapper.value.getBoundingClientRect().height
+  takeOverLayout.value = true
 })
 
 onUnmounted(() => {
@@ -46,7 +52,7 @@ onUnmounted(() => {
     ease-fast-in
     :class="{ 'm-t-16 lg:m-t-12': !splashImage }"
     :style="{
-      height: `${splashImage ? '26rem' : textSectionHeight + 'px'}`,
+      height: `${splashImage ? '26rem' : takeOverLayout ? textSectionHeight + 'px' : 'auto'}`,
     }">
     <div
       relative
@@ -78,8 +84,7 @@ onUnmounted(() => {
         max-w-840px
         p-x-6
         lg:p-x-12
-        absolute
-        :class="[splashImage ? 'bottom-6' : 'top-0']"
+        :class="[splashImage ? 'bottom-6' : 'top-0', { absolute: takeOverLayout }]"
         ref="text-section-wrapper">
         <TagList
           :stateful="false"

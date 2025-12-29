@@ -20,12 +20,25 @@ const pageGroups = computed(() => {
   const pages = allPages.filter((page) => page.category === base.value).sort(pageEntryCompare)
   return groupByYearMonth(pages)
 })
+
+const prevGroupLength = computed(() => {
+  const lengths = [0]
+  pageGroups.value
+    .map((group) => group.items.length)
+    .forEach((len) => {
+      lengths.push(lengths[lengths.length - 1]! + len)
+    })
+  return lengths
+})
 </script>
 
 <template>
   <div p-t-6 :key="base || 'EMPTY_BASE'">
     <main flex="~ col gap-10">
-      <div relative v-for="pageGroup in pageGroups" :key="pageGroup.year + '-' + pageGroup.month">
+      <div
+        relative
+        v-for="(pageGroup, groupIndex) in pageGroups"
+        :key="pageGroup.year + '-' + pageGroup.month">
         <h2
           m-0
           text-stroke-1
@@ -46,9 +59,13 @@ const pageGroups = computed(() => {
           {{ pageGroup.month.toString().padStart(2, '0') }}
         </h2>
         <PageListEntry
-          v-for="activity in pageGroup.items"
-          :page-entry="activity"
-          :key="activity.title" />
+          class="slide-in"
+          v-for="(page, pageIndex) in pageGroup.items"
+          :style="{
+            '--slide-in-stage': pageIndex + prevGroupLength[groupIndex]!,
+          }"
+          :page-entry="page"
+          :key="page.title" />
       </div>
     </main>
   </div>
