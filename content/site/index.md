@@ -25,6 +25,6 @@ ScantPress is not planned to be published as a dedicated package for now, but yo
 
 Refactoring and improvements are ongoing. New features such as search support will be backported to the original implementation when possible.
 
-Current site is built and deployed with GitHub Actions, and the commit triggering the build is <a :href="`https://github.com/${SiteConfiguration.git.repo}/commit/${Context.githubSHA}`"><code>{{ Context.githubSHA }}</code></a>.
+Current site is built and deployed with GitHub Actions, the commit triggering the build is <a break-words :href="`https://github.com/${SiteConfiguration.git.repo}/commit/${Context.githubSHA}`"><code>{{ Context.githubSHA }}</code></a>.
 
 This site is deployed on GitHub Pages, served via Cloudflare CDN. <CloudflareLocation />
