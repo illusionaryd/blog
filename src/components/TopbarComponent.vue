@@ -55,8 +55,9 @@ defineProps<{
         duration-200
         translate-y-2
         opacity-0
+        v-html="title"
         :class="{ 'opacity-100 translate-y-0!': showTitle }"
-        >{{ title }}</span
+        ></span
       >
     </div>
   </div>
