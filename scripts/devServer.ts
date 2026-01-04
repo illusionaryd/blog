@@ -80,14 +80,17 @@ export async function createServer(
       const [appHtml, preloadLinks, titlePrefix, meta] = await render(url, manifest)
 
       if (url === '/') {
-        template = template.replace(`<!--title-prefix--> | <!--title-suffix-->`, `彩笔的部落阁`)
+        template = template.replace(
+          `<!--title-prefix--> | <!--title-suffix-->`,
+          SiteConfiguration.name,
+        )
       }
       const html = template
         .replace(`<!--preload-links-->`, preloadLinks)
         .replace(`<!--app-html-->`, appHtml)
         .replace(`<!--title-prefix-->`, titlePrefix)
         .replace(`<!--meta-->`, meta)
-        .replace(`<!--title-suffix-->`, SiteConfiguration.titleSuffix)
+        .replace(`<!--title-suffix-->`, SiteConfiguration.name)
 
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
     } catch (e) {

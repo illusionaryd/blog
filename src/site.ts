@@ -8,13 +8,17 @@ interface SiteConfiguration {
     }
   }
   getRouteCategoryTitle: (routeSegment: string) => string | undefined
-  titleSuffix: string
+  name: string
   theme: 'normal' | 'new-year'
   pureStatic?: boolean
   git: {
     repo: string
   }
   defaultLang: string
+  social?: {
+    github?: string
+    email?: string
+  }
 }
 
 export const RouteTitleRecord: Record<string, string> = {
@@ -34,11 +38,15 @@ export const SiteConfiguration: SiteConfiguration = {
     },
   },
   getRouteCategoryTitle: (routeSegment) => RouteTitleRecord[routeSegment],
-  titleSuffix: '彩笔的部落阁',
+  name: '彩笔的部落阁',
   theme: 'normal',
   pureStatic: true,
   git: {
     repo: 'illusionaryd/blog',
   },
   defaultLang: 'zh-CN',
+  social: {
+    github: 'illusionaryd',
+    email: 'illusionaryd@icloud.com',
+  },
 }

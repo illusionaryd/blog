@@ -3,7 +3,7 @@ import { useTitle } from '@vueuse/core'
 import { useSSRContext } from 'vue'
 import { SiteConfiguration } from '@/site'
 
-useTitle(`404 NOT FOUND | ${SiteConfiguration.titleSuffix}`)
+useTitle(`404 NOT FOUND | ${SiteConfiguration.name}`)
 if (import.meta.env.SSR) {
   const context = useSSRContext()
   if (context) {

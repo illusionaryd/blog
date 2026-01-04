@@ -34,7 +34,7 @@ const mobileScrollViewRef = useTemplateRef('mobileScrollViewRef')
 const route = useRoute(() =>
   Math.max(scrollViewRef.value?.scrollTop ?? 0, mobileScrollViewRef.value?.scrollTop ?? 0),
 )
-useTitle('彩笔的部落阁')
+useTitle(SiteConfiguration.name)
 
 onMounted(() => {
   scrollViewRef.value?.scrollTo({ top: route.scrollTop, behavior: 'instant' })
@@ -66,12 +66,22 @@ onMounted(() => {
         p-r-6
         sm:p-r-0
         class="slide-in">
-        <h1 m-t-8 m-b-0 text-center style="view-transition-name: site-title">彩笔的部落阁</h1>
+        <h1 m-t-8 m-b-0 text-center style="view-transition-name: site-title">
+          {{ SiteConfiguration.name }}
+        </h1>
         <div flex="~ items-center gap-6" m-t-8>
-          <a href="https://github.com/illusionaryd" h-7>
+          <a
+            v-if="SiteConfiguration.social?.github"
+            :href="`https://github.com/${SiteConfiguration.social.github}`"
+            h-7>
             <AutoDarkImage :src="GithubMark" :src-dark="GithubMarkWhite" h-full alt="Github 标识" />
           </a>
-          <a href="mailto:djdjz7@qq.com" h-7 dark:text-white text-black>
+          <a
+            v-if="SiteConfiguration.social?.email"
+            :href="`mailto:${SiteConfiguration.social.email}`"
+            h-7
+            dark:text-white
+            text-black>
             <EnvelopeIcon class="h-7" />
           </a>
         </div>

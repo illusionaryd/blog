@@ -118,7 +118,7 @@ onMounted(() => {
             text-xl
             font-semibold
             style="view-transition-name: site-title"
-            >彩笔的部落阁</a
+            >{{ SiteConfiguration.name }}</a
           >
           <div flex-1></div>
           <ClientOnly>

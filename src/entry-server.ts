@@ -72,7 +72,7 @@ function renderPreloadLink(file: string) {
 
 function renderMeta(ctx: SSRContext): string {
   const meta = ctx.meta ?? {}
-  const title = ctx.titlePrefix || SiteConfiguration.titleSuffix
+  const title = ctx.titlePrefix || SiteConfiguration.name
 
   const results: string[] = []
 

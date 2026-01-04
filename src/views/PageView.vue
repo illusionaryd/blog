@@ -179,7 +179,7 @@ watchEffect(async () => {
 })
 
 const title = useTitle(() => page.value.data?.textTitle, {
-  titleTemplate: `%s | ${SiteConfiguration.titleSuffix}`,
+  titleTemplate: `%s | ${SiteConfiguration.name}`,
 })
 
 if (ssrContext) {
