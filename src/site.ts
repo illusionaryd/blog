@@ -42,11 +42,11 @@ export const SiteConfiguration: SiteConfiguration = {
   theme: 'normal',
   pureStatic: true,
   git: {
-    repo: 'illusionaryd/blog',
+    repo: 'illusionaries/blog',
   },
   defaultLang: 'zh-CN',
   social: {
-    github: 'illusionaryd',
-    email: 'illusionaryd@icloud.com',
+    github: 'illusionaries',
+    email: 'illusionaries@icloud.com',
   },
 }

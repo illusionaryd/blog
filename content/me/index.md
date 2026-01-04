@@ -72,4 +72,4 @@ Though I mainly practice frontend development, I'm also learning backend and mob
 - <img src="./kotlin.svg" class="tech-stack-icon"> Kotlin / Kotlin Multiplatform
 - <img src="./go.svg" class="tech-stack-icon"> Go
 
-Find me and my silly projects on [GitHub](https://github.com/illusionaryd)!
+Find me and my silly projects on [GitHub](https://github.com/illusionaryies)!
