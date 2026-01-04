@@ -130,7 +130,7 @@ const page = computed<PageState>(() => {
   })()
   if (module) {
     // eslint-disable-next-line vue/no-async-in-computed-properties
-    module.then(() => {
+    module.finally(() => {
       progressBar.value?.end()
     })
     const outline = usePromiseResult<MarkdownItHeader[]>(
@@ -152,6 +152,7 @@ const page = computed<PageState>(() => {
       splash,
     }
   }
+  progressBar.value?.end()
   return {
     data: (page as Partial<PageData>) ?? undefined,
     Content: NotFoundView,
