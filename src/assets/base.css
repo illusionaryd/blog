@@ -140,3 +140,7 @@ mark {
   font-family: 'Ephesis', 'Liu Jian Mao Cao', serif;
   font-optical-sizing: auto;
 }
+
+li::marker {
+  color: rgb(from currentColor r g b / 0.4);
+}
