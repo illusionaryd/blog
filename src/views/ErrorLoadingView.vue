@@ -1,12 +1,18 @@
 <script setup lang="ts">
-import { ExclamationCircleIcon } from '@heroicons/vue/24/outline'
+import { XMarkIcon } from '@heroicons/vue/24/outline'
+
+const refresh = () => {
+  window.location.reload()
+}
 </script>
 
 <template>
   <div flex="~ col items-center" m-t-24>
-    <ExclamationCircleIcon class="w-16 h-16" />
-    <h2>加载失败</h2>
-    <span>小猫把页面吃掉了？还是小兔子干的？</span>
-    <span>猜不到呀…</span>
+    <XMarkIcon class="w-12 h-12" />
+    <h3 m-b-2>加载失败</h3>
+    <div flex="~ col items-center gap-1" text-center text-subtle>
+      <span>报告长官，我们未能突破网络防线</span>
+      <span>请检查网络连接，或<a href="#" @click.prevent="refresh">刷新重试</a></span>
+    </div>
   </div>
 </template>
