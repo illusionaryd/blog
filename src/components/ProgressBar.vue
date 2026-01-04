@@ -4,8 +4,8 @@ import { ref } from 'vue'
 const progress = ref(0)
 const visible = ref(false)
 
-let incrementalInterval: NodeJS.Timeout | null = null
-let setZeroTimeout: NodeJS.Timeout | null = null
+let incrementalInterval: number | null = null
+let setZeroTimeout: number | null = null
 
 const start = () => {
   if (incrementalInterval) {
@@ -26,7 +26,7 @@ const start = () => {
       clearInterval(incrementalInterval!)
       incrementalInterval = null
     }
-  }, 300)
+  }, 800)
 }
 
 const end = () => {
