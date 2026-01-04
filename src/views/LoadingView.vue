@@ -21,8 +21,10 @@ const tips = [
 
 const tipIndex = ref(Math.floor(Math.random() * tips.length))
 const tip = computed(() => tips[tipIndex.value])
+const takingTooLong = ref(false)
 
 let interval: number
+let takingTooLongTimeout: number | null
 onMounted(() => {
   interval = setInterval(
     () => {
@@ -35,11 +37,20 @@ onMounted(() => {
     3000,
     null,
   )
+  takingTooLongTimeout = setTimeout(() => {
+    takingTooLong.value = true
+    takingTooLongTimeout = null
+  }, 5000)
 })
 
 onUnmounted(() => {
   clearInterval(interval)
+  if (takingTooLongTimeout !== null) clearTimeout(takingTooLongTimeout)
 })
+
+const refresh = () => {
+  window.location.reload()
+}
 </script>
 
 <template>
@@ -55,6 +66,11 @@ onUnmounted(() => {
           <span :key="tip" whitespace-pre text-wrap>{{ tip }}</span>
         </Transition>
         <span>请坐和放宽</span>
+        <Transition mode="out-in" name="fade-in">
+          <span m-t-2 text-sm v-if="takingTooLong" opacity-60>
+            似乎加载时间过长，<a href="#" @click.prevent="refresh">刷新</a>试试？
+          </span>
+        </Transition>
       </div>
     </div>
   </div>
