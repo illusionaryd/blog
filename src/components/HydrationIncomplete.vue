@@ -1,0 +1,21 @@
+<template>
+  <div
+    fixed
+    w-screen
+    box-border
+    h-auto
+    py-2
+    px-8
+    z-100
+    left-0
+    bottom-0
+    flex="~ col items-center"
+    bg-gradient-to-b
+    from-transparent
+    text-xs
+    text-subtle
+    to-white
+    dark:to-black>
+    <span>页面仍在加载中，部分功能可能不可用</span>
+  </div>
+</template>

@@ -4,7 +4,8 @@ import { SiteConfiguration } from './site'
 import NewYearBg from './components/NewYearBg.vue'
 import FullscreenSearch from './components/FullscreenSearch.vue'
 import { ClientOnly } from './components/ClientOnly'
-import { provide, useTemplateRef } from 'vue'
+import { onMounted, provide, ref, useTemplateRef } from 'vue'
+import HydrationIncomplete from './components/HydrationIncomplete.vue'
 // import { useDark } from '@vueuse/core'
 // useDark()
 const searchComp = useTemplateRef('search-comp-ref')
@@ -17,6 +18,12 @@ if (SiteConfiguration.theme === 'new-year' && import.meta.env.SSR === false) {
   styleElement.innerHTML = `@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Liu+Jian+Mao+Cao&display=swap');`
   document.head.appendChild(styleElement)
 }
+
+const hydrationIncomplete = ref(true)
+
+onMounted(() => {
+  hydrationIncomplete.value = false
+})
 </script>
 
 <template>
@@ -26,6 +33,9 @@ if (SiteConfiguration.theme === 'new-year' && import.meta.env.SSR === false) {
   <ClientOnly>
     <FullscreenSearch ref="search-comp-ref" />
   </ClientOnly>
+  <Transition name="fade-in">
+    <HydrationIncomplete v-if="hydrationIncomplete" />
+  </Transition>
 </template>
 
 <style lang="css">
