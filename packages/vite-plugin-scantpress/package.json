@@ -1,0 +1,22 @@
+{
+  "name": "@scantpress/vite",
+  "author": "illusionaries",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@scantpress/shared": "workspace:^",
+    "vite": "catalog:framework"
+  },
+  "devDependencies": {
+    "typescript": "catalog:framework"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json"
+  }
+}

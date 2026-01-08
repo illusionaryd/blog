@@ -1,0 +1,17 @@
+{
+  "name": "scantpress",
+  "author": "illusionaries",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "vue": "catalog:framework",
+    "vite-plugin-scantpress": "workspace:",
+    "@scantpress/shared": "workspace:",
+    "@scantpress/vite": "workspace:"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "bunx tsx ./scripts/build.ts",
+    "dev": "vite"
+  }
+}

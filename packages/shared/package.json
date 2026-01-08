@@ -1,0 +1,21 @@
+{
+  "name": "@scantpress/shared",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "unconfig": "catalog:framework"
+  },
+  "devDependencies": {
+    "tsdown": "catalog:framework"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json"
+  }
+}

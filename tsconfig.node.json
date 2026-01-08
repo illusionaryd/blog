@@ -6,13 +6,13 @@
     "cypress.config.*",
     "nightwatch.conf.*",
     "playwright.config.*",
-    "generator/*",
-    "src/data/*.ts",
-    "src/site.ts",
-    "generator/*.ts",
-    "generator/**/*.ts",
+    "scantpress.config.*",
     "scripts/*.ts",
-    "local/*.ts"
+    "local/*.ts",
+    "packages/vite-plugin-scantpress/**/*.ts",
+    "packages/shared/**/*.ts",
+    "packages/scantpress/scripts/*.ts",
+    "scantpress.config.ts"
   ],
   "compilerOptions": {
     "composite": true,
@@ -20,6 +20,10 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "types": ["node", "bun"]
+    "types": ["node", "bun"],
+    "paths": {
+      "@plugin/*": ["./packages/vite-plugin-scantpress/*"],
+      "@/*": ["./*"]
+    }
   }
 }
