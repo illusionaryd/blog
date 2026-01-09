@@ -4,11 +4,37 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@mathjax/mathjax-mhchem-font-extension": "catalog:markdown",
+    "@mdit-vue/plugin-component": "catalog:markdown",
+    "@mdit-vue/plugin-headers": "catalog:markdown",
+    "@mdit-vue/plugin-sfc": "catalog:markdown",
+    "@mdit/plugin-img-lazyload": "catalog:markdown",
+    "@mdit/plugin-tex": "catalog:markdown",
     "@scantpress/shared": "workspace:^",
-    "vite": "catalog:framework"
+    "@shikijs/markdown-it": "catalog:markdown",
+    "@shikijs/transformers": "catalog:markdown",
+    "fast-glob": "catalog:build",
+    "gray-matter": "catalog:build",
+    "image-size": "catalog:build",
+    "js-yaml": "catalog:build",
+    "jsdom": "catalog:markdown",
+    "markdown-it": "catalog:markdown",
+    "markdown-it-anchor": "catalog:markdown",
+    "markdown-it-container": "catalog:markdown",
+    "markdown-it-footnote": "catalog:markdown",
+    "mathjax": "catalog:markdown",
+    "shiki": "catalog:markdown",
+    "unocss": "catalog:framework"
   },
   "devDependencies": {
-    "typescript": "catalog:framework"
+    "@types/js-yaml": "catalog:build",
+    "@types/jsdom": "catalog:markdown",
+    "@types/markdown-it": "catalog:markdown",
+    "@types/markdown-it-container": "catalog:markdown",
+    "@types/markdown-it-footnote": "catalog:markdown",
+    "@types/mathjax": "catalog:markdown",
+    "typescript": "catalog:framework",
+    "vite": "catalog:framework"
   },
   "exports": {
     ".": {
@@ -17,6 +43,6 @@
     }
   },
   "scripts": {
-    "build": "tsc --project tsconfig.build.json"
+    "build": "tsc"
   }
 }

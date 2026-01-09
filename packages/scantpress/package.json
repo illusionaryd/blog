@@ -4,12 +4,32 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "vue": "catalog:framework",
-    "vite-plugin-scantpress": "workspace:",
-    "@scantpress/shared": "workspace:",
-    "@scantpress/vite": "workspace:"
+    "@giscus/vue": "catalog:framework",
+    "@heroicons/vue": "catalog:framework",
+    "@vueuse/core": "catalog:framework",
+    "vue": "catalog:framework"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@scantpress/shared": "workspace:",
+    "@scantpress/vite": "workspace:",
+    "@vitejs/plugin-vue": "catalog:framework",
+    "chalk": "catalog:build",
+    "cheerio": "catalog:build",
+    "fast-glob": "catalog:build",
+    "feed": "catalog:build",
+    "gray-matter": "catalog:build",
+    "html-minifier": "catalog:build",
+    "husky": "catalog:linting",
+    "image-size": "catalog:build",
+    "js-yaml": "catalog:build",
+    "pagefind": "catalog:build",
+    "prettier": "catalog:linting",
+    "sitemap": "catalog:build",
+    "typescript": "catalog:framework",
+    "vite": "catalog:framework",
+    "vite-plugin-vue-devtools": "catalog:framework",
+    "vue-tsc": "catalog:framework"
+  },
   "scripts": {
     "build": "bunx tsx ./scripts/build.ts",
     "dev": "vite"

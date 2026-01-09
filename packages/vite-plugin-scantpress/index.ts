@@ -5,8 +5,9 @@ import UnoCSS from '@unocss/vite'
 import { presetAttributify, presetWind3, transformerDirectives } from 'unocss'
 import { loadConfig } from '@scantpress/shared'
 import { dirname } from 'path'
+import type { PluginOption } from 'vite'
 
-export default async function ScantPress() {
+export default async function ScantPress(): Promise<PluginOption[]> {
   const { config, sources } = await loadConfig()
 
   const configWithPath = {

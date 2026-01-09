@@ -13,9 +13,9 @@
     "unconfig": "catalog:framework"
   },
   "devDependencies": {
-    "tsdown": "catalog:framework"
+    "typescript": "catalog:framework"
   },
   "scripts": {
-    "build": "tsc --project tsconfig.build.json"
+    "build": "tsc"
   }
 }

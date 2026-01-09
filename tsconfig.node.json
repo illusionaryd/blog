@@ -20,7 +20,7 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "types": ["node", "bun"],
+    "types": ["node"],
     "paths": {
       "@plugin/*": ["./packages/vite-plugin-scantpress/*"],
       "@/*": ["./*"]

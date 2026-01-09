@@ -34,6 +34,7 @@ export default defineConfig({
   build: {
     minify: 'oxc',
     cssMinify: true,
+    reportCompressedSize: false,
     rolldownOptions: {
       external: ['/pagefind/pagefind.js'],
     },
